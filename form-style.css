@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-color);
+}
+
+:root {
+  --gold-color: #d6ad60;
+  --dark-color: #122620;
+  --cream-color: #f4ebd0;
+  --radius: 10px;
+}
+
+.form-container {
+  background-color: rgba(206, 190, 160, 0.09);
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.596) 0px 22px 70px 4px;
+  /* This is for the Animation*/
+  overflow: hidden;
+  border-top: 1px solid #d6ad60;
+  border-right: 1px solid #d6ad60;
+  border-bottom: 1px solid #d6ad60;
+  border-left: 1px solid #d6ad60;
+}
+
+.form-container h2 {
+  color: var(--gold-color);
+  text-align: center;
+}
+
+.form-container h2 strong {
+  border-bottom: #f4ebd0 solid 3px;
+}
+
+form {
+  display: grid;
+  grid-template-rows: repeat(5, 0.2fr);
+  height: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.email-box,
+.country-box,
+.zipCode-box,
+.submit-box {
+  justify-self: center;
+}
+
+.password-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+#submit-btn {
+  cursor: pointer;
+  padding: 10px;
+  width: 6rem;
+  font-weight: 600;
+  font-family: italic;
+  font-size: 20px;
+  border-radius: var(--radius);
+  background-color: var(--gold-color);
+  color: var(--cream-color);
+  border: solid 2px transparent;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#submit-btn:focus {
+  border: solid 2px var(--cream-color);
+  transform: scale(1.02);
+}
+
+input {
+  border-radius: var(--radius);
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  border: solid 2px transparent;
+  transition: all 0.3s ease-in;
+}
+
+input:focus {
+  border: solid 2px var(--gold-color);
+  transform: scale(1.02);
+}
+
+input:required {
+  box-shadow: rgba(0, 0, 0, 0.562) 0px 5px 15px;
+}
+
+/* Animation */
+span {
+  position: absolute;
+  border-radius: 100vmax;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(
+    180deg,
+    #d6ad60,
+    rgba(214, 173, 96, 0.5),
+    transparent 70%
+  );
+}
+
+.bottom {
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(
+    180deg,
+    #d6ad60,
+    rgba(214, 173, 96, 0.5),
+    transparent 70%
+  );
+}
+
+.right {
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    #d6ad60,
+    rgba(214, 173, 96, 0.5),
+    transparent 70%
+  );
+}
+
+.left {
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    #d6ad60,
+    rgba(214, 173, 96, 0.5),
+    transparent 70%
+  );
+}
+
+.top {
+  animation: animateTop 3s ease-in-out infinite;
+}
+
+.bottom {
+  animation: animateBottom 3s ease-in-out infinite;
+}
+
+.right {
+  animation: animateRight 3s ease-in-out infinite;
+}
+
+.left {
+  animation: animateLeft 3s ease-in-out infinite;
+}
+
+@keyframes animateTop {
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateBottom {
+  0%,
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+
+  75% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateRight {
+  0%,
+  25% {
+    opacity: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 1;
+    height: 100%;
+  }
+
+  55%,
+  100% {
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes animateLeft {
+  0%,
+  75% {
+    opacity: 0;
+    bottom: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+/* ******** Media Queries */
+@media (max-width: 430px) {
+  .password-box {
+    justify-self: center;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 179px;
+  }
+}

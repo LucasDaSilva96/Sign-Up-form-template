@@ -9,31 +9,51 @@
   </head>
   <body>
     <div class="form-container">
-      <form action="get">
+      <h2>Sign Up <strong>Today</strong></h2>
+      <form>
         <!-- Email -->
         <div class="email-box">
-          <input type="email" required placeholder="Email" />
+          <input id="email" type="email" required placeholder="Email*" />
         </div>
         <!-- Country -->
         <div class="country-box">
-          <input type="text" required minlength="5" placeholder="Country" />
+          <input
+            id="country"
+            type="text"
+            required
+            minlength="5"
+            placeholder="Country*"
+          />
         </div>
         <!-- Zip Code -->
         <div class="zipCode-box">
-          <input type="number" required placeholder="Zip Code" />
+          <input id="zip" type="number" placeholder="Zip Code" />
         </div>
         <!-- Password and Password Confirmation -->
         <div class="password-box">
-          <input type="password" required placeholder="Password" />
-          <input type="password" required placeholder="Confirm Password" />
+          <input
+            id="password"
+            type="password"
+            required
+            placeholder="Password*"
+          />
+          <input
+            id="confirm-pass"
+            type="password"
+            required
+            placeholder="Confirm Password*"
+          />
         </div>
         <!-- Submit button -->
         <div class="submit-box">
-          <button id="submit-btn">Done</button>
+          <button id="submit-btn">Submit</button>
         </div>
       </form>
+      <!-- This is for the animation -->
+      <span class="top"></span>
+      <span class="right"></span>
+      <span class="bottom"></span>
+      <span class="left"></span>
     </div>
-    <!-- overlay-div -->
-    <div class="overlay"></div>
   </body>
 </html>
