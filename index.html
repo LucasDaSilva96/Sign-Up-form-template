@@ -8,6 +8,32 @@
     <title>Sign-Up form template</title>
   </head>
   <body>
-    <form action="get"></form>
+    <div class="form-container">
+      <form action="get">
+        <!-- Email -->
+        <div class="email-box">
+          <input type="email" required placeholder="Email" />
+        </div>
+        <!-- Country -->
+        <div class="country-box">
+          <input type="text" required minlength="5" placeholder="Country" />
+        </div>
+        <!-- Zip Code -->
+        <div class="zipCode-box">
+          <input type="number" required placeholder="Zip Code" />
+        </div>
+        <!-- Password and Password Confirmation -->
+        <div class="password-box">
+          <input type="password" required placeholder="Password" />
+          <input type="password" required placeholder="Confirm Password" />
+        </div>
+        <!-- Submit button -->
+        <div class="submit-box">
+          <button id="submit-btn">Done</button>
+        </div>
+      </form>
+    </div>
+    <!-- overlay-div -->
+    <div class="overlay"></div>
   </body>
 </html>
