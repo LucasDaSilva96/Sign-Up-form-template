@@ -98,12 +98,7 @@ input {
 }
 
 input:focus {
-  border: solid 2px var(--gold-color);
   transform: scale(1.02);
-}
-
-input:required {
-  box-shadow: rgba(0, 0, 0, 0.562) 0px 5px 15px;
 }
 
 input::-webkit-outer-spin-button,
