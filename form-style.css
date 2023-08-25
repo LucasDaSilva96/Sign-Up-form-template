@@ -84,6 +84,8 @@ form {
 #submit-btn:focus {
   border: solid 2px var(--cream-color);
   transform: scale(1.02);
+  background-color: var(--cream-color);
+  color: var(--gold-color);
 }
 
 input {
@@ -92,7 +94,7 @@ input {
   text-align: center;
   outline: none;
   border: solid 2px transparent;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
 }
 
 input:focus {
@@ -102,6 +104,12 @@ input:focus {
 
 input:required {
   box-shadow: rgba(0, 0, 0, 0.562) 0px 5px 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Animation */
@@ -248,4 +256,17 @@ span {
     gap: 15px;
     max-width: 179px;
   }
+}
+
+/* Validation classes */
+.invalid {
+  border-color: red;
+  background-color: rgba(138, 68, 68, 0.4);
+  color: whitesmoke;
+}
+
+.valid {
+  border-color: green;
+  background-color: rgba(0, 128, 0, 0.4);
+  color: whitesmoke;
 }
